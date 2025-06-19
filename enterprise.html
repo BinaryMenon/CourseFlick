@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRelifx - Empowering Dreams Through Education.</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#6366f1', secondary: '#4f46e5' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+        }
+
+        /* .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        } */
+
+        .feature-card {
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card {
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body class="text-gray-100">
+    <header class="fixed w-full top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="font-['Pacifico'] text-primary text-2xl">EduRelifx</a>
+                    <nav class="hidden md:ml-12 md:flex md:space-x-8">
+                        <a href="index.html" class="text-black- 700 hover:text-primary font-medium">Home</a>
+                        <a href="/courses/course-template.html" class="text-black-700 hover:text-primary font-medium">Courses</a>
+                        <a href="resources.html" class="text-black-700 hover:text-primary font-medium">Resources</a>
+                        <a href="#" class="text-primary font-medium">Enterprise</a>
+                        <a href="about_us.html" class="text-black-700 hover:text-primary font-medium">About Us</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="sign.html" class="text-white-700 hover:text-primary font-medium whitespace-nowrap">Sign In</a>
+                    <a href="#" class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                    <div class="lg:w-1/2">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Enterprise Solutions for
+                            <span class="gradient-text">Modern Business</span>
+                        </h1>
+                        <p class="mt-6 text-xl text-gray-400">Transform your business with our enterprise-grade
+                            platform. Scale securely, innovate faster, and drive growth with confidence.</p>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4"><button
+                                class="bg-primary hover:bg-primary/90 text-white px-8 py-3 font-medium !rounded-button whitespace-nowrap">Schedule
+                                Demo</button><button
+                                class="border border-gray-700 hover:border-gray-600 px-8 py-3 font-medium !rounded-button whitespace-nowrap">Contact
+                                Sales</button></div>
+                        <div class="mt-8 flex items-center gap-8">
+                            <div class="flex items-center gap-2">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary"><i
+                                        class="ri-shield-check-line"></i></div><span class="text-gray-400">Enterprise
+                                    Security</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary"><i
+                                        class="ri-customer-service-2-line"></i></div><span class="text-gray-400">24/7
+                                    Support</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-6 h-6 flex items-center justify-center text-primary"><i
+                                        class="ri-global-line"></i></div><span class="text-gray-400">Global Scale</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2"><img
+                            src="/assets/images/enterprise.jpg"
+                            alt="Enterprise Solutions" class="w-full rounded-lg shadow-2xl"></div>
+                </div>
+            </div>
+        </section>
+        <section id="features" class="py-20 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold">Enterprise-Grade Features</h2>
+                    <p class="mt-4 text-xl text-gray-400">Everything you need to scale your business</p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg border border-gray-700">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg text-primary mb-4">
+                            <i class="ri-shield-keyhole-line ri-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Advanced Security</h3>
+                        <p class="text-gray-400">Enterprise-grade security with end-to-end encryption, SSO, and
+                            compliance certifications.</p>
+                    </div>
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg border border-gray-700">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg text-primary mb-4">
+                            <i class="ri-database-2-line ri-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Scalable Infrastructure</h3>
+                        <p class="text-gray-400">Cloud-native architecture that scales automatically with your business
+                            needs.</p>
+                    </div>
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg border border-gray-700">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg text-primary mb-4">
+                            <i class="ri-customer-service-2-line ri-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Dedicated Support</h3>
+                        <p class="text-gray-400">24/7 priority support with dedicated account managers and technical
+                            experts.</p>
+                    </div>
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg border border-gray-700">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg text-primary mb-4">
+                            <i class="ri-line-chart-line ri-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Analytics & Insights</h3>
+                        <p class="text-gray-400">Advanced analytics and reporting tools to make data-driven decisions.
+                        </p>
+                    </div>
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg border border-gray-700">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg text-primary mb-4">
+                            <i class="ri-tools-line ri-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">API Integration</h3>
+                        <p class="text-gray-400">Seamless integration with your existing tools and workflows through our
+                            API.</p>
+                    </div>
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg border border-gray-700">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg text-primary mb-4">
+                            <i class="ri-group-line ri-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Team Collaboration</h3>
+                        <p class="text-gray-400">Enhanced collaboration features designed for enterprise teams.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="solutions" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold">Industry Solutions</h2>
+                    <p class="mt-4 text-xl text-gray-400">Tailored solutions for your industry</p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 rounded-lg overflow-hidden"><img
+                            src="/assets/images/enterprise2.jpg"
+                            alt="Financial Services" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Financial Services</h3>
+                            <p class="text-gray-400 mb-4">Secure solutions for banking, insurance, and financial
+                                institutions.</p><button
+                                class="text-primary hover:text-primary/90 font-medium flex items-center !rounded-button whitespace-nowrap">Learn
+                                More<div class="w-5 h-5 flex items-center justify-center ml-1"><i
+                                        class="ri-arrow-right-line"></i></div></button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg overflow-hidden"><img
+                            src="/assets/images/enterprise3.jpg"
+                            alt="Healthcare" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Healthcare</h3>
+                            <p class="text-gray-400 mb-4">HIPAA-compliant solutions for healthcare providers and
+                                organizations.</p><button
+                                class="text-primary hover:text-primary/90 font-medium flex items-center !rounded-button whitespace-nowrap">Learn
+                                More<div class="w-5 h-5 flex items-center justify-center ml-1"><i
+                                        class="ri-arrow-right-line"></i></div></button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg overflow-hidden"><img
+                            src="/assets/images/enterprise4.jpg"
+                            alt="Retail" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Retail</h3>
+                            <p class="text-gray-400 mb-4">Omnichannel solutions for modern retail businesses.</p><button
+                                class="text-primary hover:text-primary/90 font-medium flex items-center !rounded-button whitespace-nowrap">Learn
+                                More<div class="w-5 h-5 flex items-center justify-center ml-1"><i
+                                        class="ri-arrow-right-line"></i></div></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="pricing" class="py-20 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold">Enterprise Pricing</h2>
+                    <p class="mt-4 text-xl text-gray-400">Flexible plans for growing businesses</p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="pricing-card bg-gray-800 rounded-lg p-8 border border-gray-700">
+                        <h3 class="text-xl font-semibold">Growth</h3>
+                        <div class="mt-4"><span class="text-4xl font-bold">$499</span><span
+                                class="text-gray-400">/month</span></div>
+                        <p class="mt-4 text-gray-400">Perfect for growing teams</p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Up to 100 users</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Basic security features</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Standard support</span>
+                            </li>
+                        </ul><button
+                            class="mt-8 w-full bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 font-medium !rounded-button whitespace-nowrap">Get
+                            Started</button>
+                    </div>
+                    <div class="pricing-card bg-gray-800 rounded-lg p-8 border-2 border-primary relative">
+                        <div
+                            class="absolute top-0 right-0 bg-primary text-white px-3 py-1 text-sm rounded-bl-lg rounded-tr-lg">
+                            Popular</div>
+                        <h3 class="text-xl font-semibold">Business</h3>
+                        <div class="mt-4"><span class="text-4xl font-bold">$999</span><span
+                                class="text-gray-400">/month</span></div>
+                        <p class="mt-4 text-gray-400">For established businesses</p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Up to 500 users</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Advanced security</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Priority support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Advanced analytics</span>
+                            </li>
+                        </ul><button
+                            class="mt-8 w-full bg-primary hover:bg-primary/90 text-white px-4 py-2 font-medium !rounded-button whitespace-nowrap">Get
+                            Started</button>
+                    </div>
+                    <div class="pricing-card bg-gray-800 rounded-lg p-8 border border-gray-700">
+                        <h3 class="text-xl font-semibold">Enterprise</h3>
+                        <div class="mt-4"><span class="text-4xl font-bold">Custom</span></div>
+                        <p class="mt-4 text-gray-400">For large organizations</p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Unlimited users</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Custom security</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>24/7 dedicated support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2"><i
+                                        class="ri-check-line"></i></div><span>Custom integrations</span>
+                            </li>
+                        </ul><button
+                            class="mt-8 w-full bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 font-medium !rounded-button whitespace-nowrap">Contact
+                            Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gray-800 rounded-lg p-8 md:p-12 border border-gray-700">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div>
+                            <h2 class="text-3xl font-bold">Ready to get started?</h2>
+                            <p class="mt-4 text-xl text-gray-400">Talk to our enterprise sales team</p>
+                            <div class="mt-8 space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg text-primary">
+                                        <i class="ri-phone-line ri-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold">Call Us</h3>
+                                        <p class="text-gray-400">+1 (888) 123-4567</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg text-primary">
+                                        <i class="ri-mail-line ri-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold">Email Us</h3>
+                                        <p class="text-gray-400">enterprise@example.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <form class="space-y-6">
+                                <div><label class="block text-sm font-medium mb-2">Name</label><input type="text"
+                                        class="w-full bg-gray-700 border-none rounded-lg px-4 py-2 text-white placeholder-gray-400"
+                                        placeholder="John Smith"></div>
+                                <div><label class="block text-sm font-medium mb-2">Email</label><input type="email"
+                                        class="w-full bg-gray-700 border-none rounded-lg px-4 py-2 text-white placeholder-gray-400"
+                                        placeholder="john@company.com"></div>
+                                <div><label class="block text-sm font-medium mb-2">Company</label><input type="text"
+                                        class="w-full bg-gray-700 border-none rounded-lg px-4 py-2 text-white placeholder-gray-400"
+                                        placeholder="Company Inc."></div>
+                                <div><label class="block text-sm font-medium mb-2">Message</label><textarea
+                                        class="w-full bg-gray-700 border-none rounded-lg px-4 py-2 text-white placeholder-gray-400"
+                                        rows="4" placeholder="Tell us about your needs"></textarea></div><button
+                                    class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap">Send
+                                    Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="font-['Pacifico'] text-white text-2xl mb-4 inline-block">EduRelifx</a>
+                    <p class="text-gray-400 mb-4">Empowering individuals to achieve their professional goals through
+                        accessible, high-quality education.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-x-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Explore</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instructors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest courses and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your email address"
+                            class="bg-gray-800 border-none text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                        <button type="submit"
+                            class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 EduRelifx. All rights reserved.</p>
+                    <div class="flex flex-wrap justify-center space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Accessibility</a>
+                    </div>
+                </div>
+                <!-- <div class="mt-4 flex justify-center space-x-4">
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-visa-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-mastercard-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-paypal-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-apple-fill"></i>
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <script>document.addEventListener('DOMContentLoaded', function () { const form = document.querySelector('form'); form.addEventListener('submit', function (e) { e.preventDefault(); const formData = new FormData(form); const data = Object.fromEntries(formData); console.log('Form submitted:', data); form.reset(); }); });</script>
+</body>
+
+</html>

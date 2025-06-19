@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillForge - Transform Your Future Through Learning</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4361ee',secondary:'#7209b7'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('/assets/images/homepage\ \(1\).jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="font-['Pacifico'] text-primary text-2xl">SkillForge</a>
+                    <nav class="hidden md:ml-12 md:flex md:space-x-8">
+                        <a href="#" class="text-primary font-medium">Home</a>
+                        <a href="#" class="text-black-700 hover:text-primary font-medium">Courses</a>
+                        <a href="#" class="text-black-700 hover:text-primary font-medium">Resources</a>
+                        <a href="#" class="text-black- 700 hover:text-primary font-medium">Enterprise</a>
+                        <a href="#" class="text-black-700 hover:text-primary font-medium">About Us</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium whitespace-nowrap">Sign In</a>
+                    <a href="#" class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block body %}
+        <!-- Hero Section -->
+    <section class="pt-24 relative">
+        <div class="w-full h-[600px] relative">
+            <div style="background-image: url('https://readdy.ai/api/search-image?query=A%20professional%20corporate%20office%20environment%20with%20a%20modern%2C%20open%20workspace.%20Natural%20light%20streams%20through%20large%20windows%2C%20illuminating%20a%20collaborative%20area%20with%20sleek%20furniture.%20The%20space%20features%20a%20blend%20of%20private%20meeting%20rooms%20and%20open%20workstations%2C%20with%20subtle%20branding%20elements%20visible.%20The%20atmosphere%20conveys%20innovation%2C%20professionalism%2C%20and%20teamwork.&width=1920&height=800&seq=1&orientation=landscape');" class="absolute inset-0 bg-cover bg-center bg-no-repeat object-top"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+            <div class="container mx-auto px-6 h-full flex items-center relative z-10">
+                <div class="max-w-2xl text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Story of Innovation and Growth</h1>
+                    <p class="text-xl mb-8">We're a team of passionate individuals dedicated to creating exceptional experiences and driving meaningful change in our industry.</p>
+                    <button class="bg-white text-primary px-8 py-3 !rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">Discover Our Journey</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock body %}
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="font-['Pacifico'] text-white text-2xl mb-4 inline-block">SkillForge</a>
+                    <p class="text-gray-400 mb-4">Empowering individuals to achieve their professional goals through accessible, high-quality education.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-x-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Explore</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instructors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest courses and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your email address" class="bg-gray-800 border-none text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                        <button type="submit" class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 SkillForge. All rights reserved.</p>
+                    <div class="flex flex-wrap justify-center space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Accessibility</a>
+                    </div>
+                </div>
+                <!-- <div class="mt-4 flex justify-center space-x-4">
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-visa-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-mastercard-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-paypal-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-apple-fill"></i>
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle functionality can be added here
+        });
+    </script>
+</body>
+</html>

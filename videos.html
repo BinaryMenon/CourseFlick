@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Background Video</title>
+    <style>
+        /* Make sure the video covers the entire screen */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Video Background -->
+    <video autoplay muted loop class="bg-video">
+        <source src="/assets/videos/v1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Foreground Content -->
+    <div class="content">
+        <h1>Welcome</h1>
+        <p>This is your site with a background video.</p>
+    </div>
+
+</body>
+
+</html>

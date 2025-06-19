@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillForge - Transform Your Future Through Learning</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#4361ee', secondary: '#7209b7' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-bg {
+            background-image: url('/assets/images/homepage\ \(1\).jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #cou {
+            background-image: url('/assets/course/popularimages.avif');
+            background-size: cover;
+            background-position: center;
+            border-radius: 9px;
+            padding: 35px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="font-['Pacifico'] text-primary text-2xl">SkillForge</a>
+                    <nav class="hidden md:ml-12 md:flex md:space-x-8">
+                        <a href="/index.html" class="text-black-700 hover:text-primary font-medium">Home</a>
+                        <a href="#" class="text-primary font-medium">Courses</a>
+                        <a href="/resources.html" class="text-black-700 hover:text-primary font-medium">Resources</a>
+                        <a href="/enterprise.html" class="text-black- 700 hover:text-primary font-medium">Enterprise</a>
+                        <a href="/about_us.html" class="text-black-700 hover:text-primary font-medium">About Us</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium whitespace-nowrap">Sign In</a>
+                    <a href="#"
+                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-8" id="cou">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Popular Courses</h1>
+            <p class="text-gray-600 max-w-2xl">Explore our most popular courses across various categories. Start your
+                learning journey today and unlock new skills for your career.</p>
+        </div>
+
+        <div class="mb-8 overflow-x-auto">
+            <div class="flex space-x-2 min-w-max pb-2">
+                <button onclick="window.location.href='course-template.html';"
+                    class="category-tab flex items-center px-5 py-3 bg-white rounded-full border-2 border-gray-200 text-gray-700 font-medium whitespace-nowrap hover:border-blue-500 transition-all"
+                    data-category="all">
+                    <i class="ri-apps-line mr-2"></i>All Courses
+                </button>
+                <button onclick="window.location.href='datascience.html';"
+                    class="category-tab active flex items-center px-5 py-3 bg-white rounded-full border-2 border-primary text-primary font-bold whitespace-nowrap transition-all"
+                    data-category="data-science">
+                    <i class="ri-bar-chart-box-line mr-2"></i>Data Science
+                </button>
+                <button onclick="window.location.href='web.html';"
+                    class="category-tab flex items-center px-5 py-3 bg-white rounded-full border-2 border-gray-200 text-gray-700 font-medium whitespace-nowrap hover:border-blue-500 transition-all"
+                    data-category="web-development">
+                    <i class="ri-code-s-slash-line mr-2"></i>Web Development
+                </button>
+                <button onclick="window.location.href='business.html';"
+                    class="category-tab flex items-center px-5 py-3 bg-white rounded-full border-2 border-gray-200 text-gray-700 font-medium whitespace-nowrap hover:border-blue-500 transition-all"
+                    data-category="business">
+                    <i class="ri-briefcase-4-line mr-2"></i>Business
+                </button>
+                <button onclick="window.location.href='design.html';"
+                    class="category-tab flex items-center px-5 py-3 bg-white rounded-full border-2 border-gray-200 text-gray-700 font-medium whitespace-nowrap hover:border-blue-500 transition-all"
+                    data-category="design">
+                    <i class="ri-palette-line mr-2"></i>Design
+                </button>
+                <button onclick="window.location.href='market.html';"
+                    class="category-tab flex items-center px-5 py-3 bg-white rounded-full border-2 border-gray-200 text-gray-700 font-medium whitespace-nowrap hover:border-blue-500 transition-all"
+                    data-category="marketing">
+                    <i class="ri-megaphone-line mr-2"></i>Marketing
+                </button>
+            </div>
+        </div>
+        <div id="all" class="category-content active grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Data Science Courses -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/data1.jpg" alt="Data Science Fundamentals"
+                        class="w-full h-48 object-cover object-top">
+                    <div class="absolute top-3 right-3 bg-primary text-white px-2 py-1 rounded-md text-sm font-medium">
+                        Bestseller</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Data
+                            Science</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Data Science Fundamentals: Python & Statistics
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Learn the core concepts of data science, statistical analysis,
+                        and Python programming for data analysis.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/data2.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Dr. Michael Chen</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.8 (2,456 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$129.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/data3.jpg" alt="Full Stack Web Development"
+                        class="w-full h-48 object-cover object-top">
+                    <div
+                        class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-md text-sm font-medium">
+                        New</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">Web
+                            Development</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Modern JavaScript: From Fundamentals to React
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Master JavaScript fundamentals and build real-world
+                        applications with React, Redux, and Node.js.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/data4.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Sarah Johnson</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.9 (3,218 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$149.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/data5.jpg" alt="Business Strategy"
+                        class="w-full h-48 object-cover object-top">
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span
+                            class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">Business</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated March 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Strategic Business Management & Leadership</h3>
+                    <p class="text-sm text-gray-600 mb-2">Develop essential leadership skills and business strategies to
+                        drive organizational growth and innovation.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/data6.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Robert Williams, MBA</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-line text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.7 (1,845 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$119.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/data7.jpg" alt="UI/UX Design" class="w-full h-48 object-cover object-top">
+                    <div class="absolute top-3 right-3 bg-primary text-white px-2 py-1 rounded-md text-sm font-medium">
+                        Bestseller</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-0.5 rounded">Design</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">UI/UX Design Masterclass: From Wireframe to
+                        Prototype</h3>
+                    <p class="text-sm text-gray-600 mb-2">Learn to create stunning user interfaces and seamless user
+                        experiences for web and mobile applications.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/data8.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Emma Rodriguez</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.8 (2,756 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$139.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/data9.jpg" alt="Digital Marketing"
+                        class="w-full h-48 object-cover object-top">
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span
+                            class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Marketing</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated February 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Digital Marketing: SEO, Social Media & Beyond
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Master the latest digital marketing strategies to grow your
+                        audience and drive conversions.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/data10.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">David Thompson</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-line text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.6 (1,532 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$109.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Another Data Science Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/data11.jpg" alt="Machine Learning"
+                        class="w-full h-48 object-cover object-top">
+                    <div
+                        class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-md text-sm font-medium">
+                        New</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Data
+                            Science</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Machine Learning & AI: Practical Applications
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Build real-world machine learning models and understand the
+                        fundamentals of artificial intelligence.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/data12.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Dr. Olivia Martinez</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.9 (876 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$159.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <!-- Data Science Category Content -->
+        <div id="data-science" class="category-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Data Science Courses -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/data13.jpg" alt="Data Science Fundamentals"
+                        class="w-full h-48 object-cover object-top">
+                    <div class="absolute top-3 right-3 bg-primary text-white px-2 py-1 rounded-md text-sm font-medium">
+                        Bestseller</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Data
+                            Science</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Data Science Fundamentals: Python & Statistics
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Learn the core concepts of data science, statistical analysis,
+                        and Python programming for data analysis.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/data14.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Dr. Michael Chen</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.8 (2,456 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$129.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Another Data Science Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/data15.jpg" alt="Machine Learning"
+                        class="w-full h-48 object-cover object-top">
+                    <div
+                        class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-md text-sm font-medium">
+                        New</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Data
+                            Science</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Machine Learning & AI: Practical Applications
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Build real-world machine learning models and understand the
+                        fundamentals of artificial intelligence.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/data16.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Dr. Olivia Martinez</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.9 (876 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$159.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Visualization Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/data17.jpg" alt="Data Visualization"
+                        class="w-full h-48 object-cover object-top">
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Data
+                            Science</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated March 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Data Visualization Mastery with Tableau & D3.js
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Create stunning data visualizations and interactive dashboards
+                        to communicate insights effectively.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/data18.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">James Wilson</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-line text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.7 (1,245 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500  text-yellow-400-through ml-2">$119.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <!-- Web Development Category Content -->
+        <div id="web-development" class="category-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Web Development Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/19.jpg" alt="Full Stack Web Development"
+                        class="w-full h-48 object-cover object-top">
+                    <div
+                        class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-md text-sm font-medium">
+                        New</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">Web
+                            Development</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Modern JavaScript: From Fundamentals to React
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Master JavaScript fundamentals and build real-world
+                        applications with React, Redux, and Node.js.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/20.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Sarah Johnson</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.9 (3,218 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$149.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Development Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/21.jpg" alt="Backend Development"
+                        class="w-full h-48 object-cover object-top">
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">Web
+                            Development</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated January 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Backend Development with Node.js & Express</h3>
+                    <p class="text-sm text-gray-600 mb-2">Build scalable and secure backend systems with Node.js,
+                        Express, and MongoDB.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/22.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Alex Thompson</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.8 (1,876 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$129.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsive Design Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/23.jpg" alt="Responsive Design"
+                        class="w-full h-48 object-cover object-top">
+                    <div class="absolute top-3 right-3 bg-primary text-white px-2 py-1 rounded-md text-sm font-medium">
+                        Bestseller</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">Web
+                            Development</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated March 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Responsive Web Design: HTML5, CSS3 & Flexbox
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Create modern, responsive websites that look great on any
+                        device using the latest HTML5 and CSS3 techniques.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/24.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Jennifer Parker</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-line text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.7 (2,345 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$119.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <!-- Business Category Content -->
+        <div id="business" class="category-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Business Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/25.jpg" alt="Business Strategy"
+                        class="w-full h-48 object-cover object-top">
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span
+                            class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">Business</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated March 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Strategic Business Management & Leadership</h3>
+                    <p class="text-sm text-gray-600 mb-2">Develop essential leadership skills and business strategies to
+                        drive organizational growth and innovation.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/26.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Robert Williams, MBA</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-line text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.7 (1,845 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$119.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrepreneurship Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/27.jpg" alt="Entrepreneurship" class="w-full h-48 object-cover object-top">
+                    <div class="absolute top-3 right-3 bg-primary text-white px-2 py-1 rounded-md text-sm font-medium">
+                        Bestseller</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span
+                            class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">Business</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated February 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Entrepreneurship: From Idea to Profitable
+                        Business</h3>
+                    <p class="text-sm text-gray-600 mb-2">Learn how to validate ideas, build a business model, and
+                        launch a successful startup from scratch.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/28.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Michelle Garcia</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.8 (2,156 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$129.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Analysis Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/29.jpg" alt="Financial Analysis"
+                        class="w-full h-48 object-cover object-top">
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span
+                            class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">Business</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Financial Analysis & Modeling for Business
+                        Decisions</h3>
+                    <p class="text-sm text-gray-600 mb-2">Master financial modeling techniques to make data-driven
+                        business decisions and investment analyses.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/30.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Daniel Richardson, CFA</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-line text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.6 (1,432 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$139.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <!-- Design Category Content -->
+        <div id="design" class="category-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Design Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/31.jpg" alt="UI/UX Design" class="w-full h-48 object-cover object-top">
+                    <div class="absolute top-3 right-3 bg-primary text-white px-2 py-1 rounded-md text-sm font-medium">
+                        Bestseller</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-0.5 rounded">Design</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">UI/UX Design Masterclass: From Wireframe to
+                        Prototype</h3>
+                    <p class="text-sm text-gray-600 mb-2">Learn to create stunning user interfaces and seamless user
+                        experiences for web and mobile applications.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/32.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Emma Rodriguez</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.8 (2,756 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$139.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graphic Design Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/33.jpg" alt="Graphic Design" class="w-full h-48 object-cover object-top">
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-0.5 rounded">Design</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated March 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Graphic Design Principles: Typography & Color
+                        Theory</h3>
+                    <p class="text-sm text-gray-600 mb-2">Master the fundamentals of graphic design with a focus on
+                        typography, color theory, and composition.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/34.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Christopher Lee</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-line text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.7 (1,987 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$119.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Motion Graphics Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/35.jpg" alt="Motion Graphics" class="w-full h-48 object-cover object-top">
+                    <div
+                        class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-md text-sm font-medium">
+                        New</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-0.5 rounded">Design</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated April 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Motion Graphics & Animation with After Effects
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Create stunning motion graphics and animations for video, web,
+                        and social media content.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/36.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Sophia Anderson</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.9 (1,245 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$149.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <!-- Marketing Category Content -->
+        <div id="marketing" class="category-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Marketing Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/37.jpg" alt="Digital Marketing"
+                        class="w-full h-48 object-cover object-top">
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span
+                            class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Marketing</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated February 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Digital Marketing: SEO, Social Media & Beyond
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Master the latest digital marketing strategies to grow your
+                        audience and drive conversions.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/38.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">David Thompson</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-line text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.6 (1,532 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$109.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Marketing Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/39.jpg" alt="Social Media Marketing"
+                        class="w-full h-48 object-cover object-top">
+                    <div class="absolute top-3 right-3 bg-primary text-white px-2 py-1 rounded-md text-sm font-medium">
+                        Bestseller</div>
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span
+                            class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Marketing</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated March 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Social Media Marketing: Strategy to Execution
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Create effective social media marketing strategies and
+                        campaigns across multiple platforms.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/40.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Jessica Miller</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-half-fill text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.8 (2,156 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$119.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Marketing Course -->
+            <div class="course-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                <div class="relative">
+                    <img src="/assets/course/41.jpg" alt="Content Marketing"
+                        class="w-full h-48 object-cover object-top">
+                </div>
+                <div class="p-5">
+                    <div class="flex items-center mb-2">
+                        <span
+                            class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded">Marketing</span>
+                        <span class="ml-2 text-xs text-gray-500">Updated January 2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Content Marketing: Create, Distribute & Measure
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-2">Learn how to create compelling content that drives traffic,
+                        engagement, and conversions.</p>
+                    <div class="flex items-center mb-2">
+                        <img src="/assets/course/42.jpg" alt="Instructor" class="w-6 h-6 rounded-full mr-2">
+                        <span class="text-sm text-gray-700">Brian Wilson</span>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="star-rating flex mr-1">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-fill text-yellow-400"></i>
+                            <i class="ri-star-line text-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-gray-600">4.7 (1,432 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-lg font-bold text-gray-900">Free</span>
+                            <span class="text-sm text-gray-500 line-through ml-2">$119.99</span>
+                        </div>
+                        <button
+                            class="bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap flex items-center">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="font-['Pacifico'] text-white text-2xl mb-4 inline-block">SkillForge</a>
+                    <p class="text-gray-400 mb-4">Empowering individuals to achieve their professional goals through
+                        accessible, high-quality education.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-x-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Explore</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instructors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest courses and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your email address"
+                            class="bg-gray-800 border-none text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                        <button type="submit"
+                            class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 SkillForge. All rights reserved.</p>
+                    <div class="flex flex-wrap justify-center space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Accessibility</a>
+                    </div>
+                </div>
+                <!-- <div class="mt-4 flex justify-center space-x-4">
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-visa-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-mastercard-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-paypal-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-apple-fill"></i>
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const allCourseCards = document.querySelectorAll('.course-card');
+
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and reset styles
+                    categoryTabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.classList.remove('bg-primary', 'text-white');
+                        t.classList.add('bg-white', 'border-gray-200', 'text-gray-700');
+                    });
+
+                    // Add active class to clicked tab and update styles
+                    tab.classList.add('active');
+                    tab.classList.remove('bg-white', 'border-gray-200', 'text-gray-700');
+                    tab.classList.add('bg-primary', 'text-white');
+
+                    // Get the category to show
+                    const category = tab.getAttribute('data-category');
+
+                    // Show/hide course cards based on category
+                    allCourseCards.forEach(card => {
+                        if (category === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            // Find the category badge within this card
+                            const badge = card.querySelector('.flex.items-center.mb-2 span:first-child');
+                            if (badge) {
+                                const badgeText = badge.textContent.toLowerCase();
+                                if (badgeText.includes(category.replace('-', ' '))) {
+                                    card.style.display = 'block';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Initialize by showing all courses
+            document.querySelector('.category-tab[data-category="all"]').click();
+        });
+    </script> -->
+</body>
+
+</html>

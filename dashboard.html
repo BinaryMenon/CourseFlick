@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learner Dashboard</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#4f46e5', secondary: '#6366f1' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-tab.active {
+            color: #4f46e5;
+            border-color: #4f46e5;
+        }
+
+        .category-tab:not(.active):hover {
+            background-color: #f3f4f6;
+        }
+
+        .category-content {
+            display: none;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+
+        .rating-stars {
+            color: #fbbf24;
+        }
+
+        input[type="range"] {
+            /* -webkit-appearance: none; */
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #4f46e5;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .custom-checkbox {
+            position: relative;
+            padding-left: 28px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            background-color: #fff;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+        }
+
+        .custom-checkbox:hover input~.checkmark {
+            border-color: #9ca3af;
+        }
+
+        .custom-checkbox input:checked~.checkmark {
+            background-color: #4f46e5;
+            border-color: #4f46e5;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .custom-checkbox input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .custom-checkbox .checkmark:after {
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <h1 class="text-2xl font-['Pacifico'] text-primary">logo</h1>
+                <nav class="hidden md:flex ml-10 space-x-8">
+                    <a href="#" class="text-primary font-bold">Profile of Student</a>
+                    <!-- <a href="#" class="text-primary font-medium">Courses</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium">About</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Contact</a> -->
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Search courses..."
+                        class="w-64 pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm">
+                    <div
+                        class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+                <!-- <div
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 cursor-pointer hover:bg-gray-200">
+                    <i class="ri-shopping-cart-2-line"></i>
+                </div> -->
+                <button
+                    class="hidden md:block bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90"
+                    onclick="window.location.href='index.html';">Sign Up</button>
+                <div class="w-10 h-10 md:hidden flex items-center justify-center cursor-pointer">
+                    <i class="ri-menu-line text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-gradient-to-r from-primary/10 to-transparent rounded-xl p-8 mb-8">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Welcome back, sid!</h1>
+                    <div class="flex items-center gap-6 mt-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
+                                <i class="ri-target-line text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-600">Annual Goal</div>
+                                <div class="font-semibold">68% Complete</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full">
+                                <i class="ri-fire-line text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-600">Learning Streak</div>
+                                <div class="font-semibold">7 Days</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 mt-6">
+                        <button
+                            class="bg-primary text-white px-6 py-2.5 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90">Resume
+                            Lesson</button>
+                        <button
+                            class="bg-white text-gray-700 px-6 py-2.5 !rounded-button whitespace-nowrap font-medium border border-gray-200 hover:bg-gray-50">Recommended</button>
+                    </div>
+                </div>
+                <div class="w-64 h-64">
+                    <div id="goalChart" class="w-full h-full"></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Left Column -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Learning Timeline Section -->
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold">Learning Timeline</h2>
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="flex items-center"><i class="ri-checkbox-circle-fill text-green-500 mr-1"></i>
+                                Started</span>
+                            <span class="mx-2">•</span>
+                            <span class="flex items-center"><i class="ri-medal-fill text-yellow-500 mr-1"></i>
+                                Certified</span>
+                            <span class="mx-2">•</span>
+                            <span class="flex items-center"><i class="ri-time-fill text-blue-500 mr-1"></i> 50h</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <video id="mainVideo" class="w-full rounded-lg mb-4" controls>
+                            <source src="/assets/videos/v2.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+
+                        <div id="lessonContent" class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-2">Introduction to React</h3>
+                            <div class="prose max-w-none">
+                                <p>This is the default lesson content that appears with the main video. When you select
+                                    a related video below, both the video and this content section will update to show
+                                    the corresponding material.</p>
+                                <ul class="list-disc pl-5 mt-2">
+                                    <li>Understanding React components</li>
+                                    <li>JSX syntax basics</li>
+                                    <li>Setting up your first React project</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Videos Section -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-medium mb-4">Related Videos</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <!-- Video 1 -->
+                            <div class="cursor-pointer group"
+                                onclick="playRelatedVideo('relatedVideo1', '/assets/videos/related1.mp4')">
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <video id="relatedVideo1" class="w-full" muted>
+                                        <source src="/assets/videos/v1.mp4" type="video/mp4">
+                                    </video>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all">
+                                        <i
+                                            class="ri-play-fill text-white text-4xl group-hover:text-primary transition-all"></i>
+                                    </div>
+                                </div>
+                                <h4 class="mt-2 font-medium">React Hooks Explained</h4>
+                                <p class="text-sm text-gray-600">12 min</p>
+                            </div>
+
+                            <!-- Video 2 -->
+                            <div class="cursor-pointer group"
+                                onclick="playRelatedVideo('relatedVideo2', '/assets/videos/related2.mp4')">
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <video id="relatedVideo2" class="w-full" muted>
+                                        <source src="/assets/videos/v2.mp4" type="video/mp4">
+                                    </video>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all">
+                                        <i
+                                            class="ri-play-fill text-white text-4xl group-hover:text-primary transition-all"></i>
+                                    </div>
+                                </div>
+                                <h4 class="mt-2 font-medium">State Management</h4>
+                                <p class="text-sm text-gray-600">8 min</p>
+                            </div>
+
+                            <!-- Video 3 -->
+                            <div class="cursor-pointer group"
+                                onclick="playRelatedVideo('relatedVideo3', '/assets/videos/related3.mp4')">
+                                <div class="relative rounded-lg overflow-hidden">
+                                    <video id="relatedVideo3" class="w-full" muted>
+                                        <source src="/assets/videos/v1.mp4" type="video/mp4">
+                                    </video>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all">
+                                        <i
+                                            class="ri-play-fill text-white text-4xl group-hover:text-primary transition-all"></i>
+                                    </div>
+                                </div>
+                                <h4 class="mt-2 font-medium">Component Lifecycle</h4>
+                                <p class="text-sm text-gray-600">15 min</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Active Courses -->
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6">Active Courses</h2>
+                    <div class="space-y-4">
+                        <div class="border border-gray-100 rounded-lg p-4">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">React JS</h3>
+                                    <p class="text-sm text-gray-600">Module 3 • 2h left</p>
+                                </div>
+                                <button
+                                    class="bg-primary/10 text-primary px-4 py-1.5 !rounded-button whitespace-nowrap font-medium hover:bg-primary/20">Focus</button>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary rounded-full h-2" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="border border-gray-100 rounded-lg p-4">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h3 class="font-semibold text-gray-900">Python</h3>
+                                    <p class="text-sm text-gray-600">Final Project • 30m</p>
+                                </div>
+                                <button
+                                    class="bg-primary/10 text-primary px-4 py-1.5 !rounded-button whitespace-nowrap font-medium hover:bg-primary/20">Focus</button>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary rounded-full h-2" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column -->
+            <div class="space-y-6">
+                <!-- Skills -->
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-semibold">Skills</h2>
+                        <button class="text-primary hover:text-primary/80 font-medium flex items-center gap-1">
+                            Skill Gaps
+                            <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-gray-700">Python (Intermediate)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-gray-700">Design (Beginner)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Community -->
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6">Community</h2>
+                    <div class="flex justify-between">
+                        <div class="text-center">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2 mx-auto">
+                                <i class="ri-team-line text-primary text-xl"></i>
+                            </div>
+                            <div class="font-semibold">3</div>
+                            <div class="text-sm text-gray-600">Active Groups</div>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2 mx-auto">
+                                <i class="ri-medal-line text-primary text-xl"></i>
+                            </div>
+                            <div class="font-semibold">#12</div>
+                            <div class="text-sm text-gray-600">Leaderboard</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6">Tools</h2>
+                    <div class="grid grid-cols-3 gap-4">
+                        <button class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mb-2">
+                                <i class="ri-calendar-line text-primary"></i>
+                            </div>
+                            <span class="text-sm text-gray-700">Schedule</span>
+                        </button>
+                        <button class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mb-2">
+                                <i class="ri-file-list-line text-primary"></i>
+                            </div>
+                            <span class="text-sm text-gray-700">Notes</span>
+                        </button>
+                        <button class="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mb-2">
+                                <i class="ri-folder-line text-primary"></i>
+                            </div>
+                            <span class="text-sm text-gray-700">Resources</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Achievements
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6">Achievements</h2>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 flex items-center justify-center bg-yellow-100 rounded-full">
+                            <i class="ri-medal-fill text-yellow-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold">5 Badges Earned</div>
+                            <div class="text-sm text-gray-600">Keep up the great work!</div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="font-['Pacifico'] text-white text-2xl mb-4 inline-block">SkillForge</a>
+                    <p class="text-gray-400 mb-4">Empowering individuals to achieve their professional goals through
+                        accessible, high-quality education.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-x-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Explore</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instructors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest courses and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your email address"
+                            class="bg-gray-800 border-none text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                        <button type="submit"
+                            class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 SkillForge. All rights reserved.</p>
+                    <div class="flex flex-wrap justify-center space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to handle related video playback
+        function playRelatedVideo(videoId, videoSrc) {
+            // Pause the main video if playing
+            const mainVideo = document.getElementById('mainVideo');
+            if (!mainVideo.paused) {
+                mainVideo.pause();
+            }
+
+            // Get the related video element
+            const relatedVideo = document.getElementById(videoId);
+
+            // If the video is already playing, pause it
+            if (!relatedVideo.paused) {
+                relatedVideo.pause();
+                return;
+            }
+
+            // Otherwise, play the selected video
+            relatedVideo.currentTime = 0;
+            relatedVideo.play();
+
+            // When this video ends, return to thumbnail view
+            relatedVideo.onended = function () {
+                relatedVideo.controls = false;
+            };
+
+            // Show controls when playing
+            relatedVideo.controls = true;
+        }
+
+        // Add hover effect to all related videos
+        document.querySelectorAll('[id^="relatedVideo"]').forEach(video => {
+            video.addEventListener('play', function () {
+                this.parentElement.querySelector('.absolute').style.display = 'none';
+            });
+
+            video.addEventListener('pause', function () {
+                if (this.currentTime === 0 || this.ended) {
+                    this.parentElement.querySelector('.absolute').style.display = 'flex';
+                    this.controls = false;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

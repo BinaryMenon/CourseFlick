@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRelifx - Empowering Dreams Through Education.</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#4361ee', secondary: '#7209b7' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-bg {
+            background-image: url('/assets/images/homepage\ \(1\).jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="font-['Pacifico'] text-primary text-2xl">EduRelifx</a>
+                    <nav class="hidden md:ml-12 md:flex md:space-x-8">
+                        <a href="#" class="text-primary font-medium">Home</a>
+                        <a href="/courses/course-template.html"
+                            class="text-black-700 hover:text-primary font-medium">Courses</a>
+                        <a href="resources.html" class="text-black-700 hover:text-primary font-medium">Resources</a>
+                        <a href="enterprise.html" class="text-black- 700 hover:text-primary font-medium">Enterprise</a>
+                        <a href="#" class="text-black-700 hover:text-primary font-medium">About Us</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="sign.html" class="text-gray-700 hover:text-primary font-medium whitespace-nowrap">Sign
+                        In</a>
+                    <a href="#"
+                        class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg w-full">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+            <div class="w-full max-w-2xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+                    Transform Your Future Through Learning
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-xl">
+                    Gain in-demand skills from industry experts and join a community of over 100,000 learners advancing
+                    their careers.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#"
+                        class="bg-primary text-white px-6 py-3 !rounded-button font-medium text-center whitespace-nowrap">
+                        Explore Courses
+                    </a>
+                    <a href="#"
+                        class="bg-white text-primary border border-primary px-6 py-3 !rounded-button font-medium text-center whitespace-nowrap">
+                        Try For Free
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="bg-white py-10 border-b-2">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary mb-2">127,500+</div>
+                    <p class="text-gray-600">Active Learners</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary mb-2">95%</div>
+                    <p class="text-gray-600">Job Placement Rate</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary mb-2">1,200+</div>
+                    <p class="text-gray-600">Courses Available</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary mb-2">520+</div>
+                    <p class="text-gray-600">Partner Companies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900">Popular Courses</h2>
+                <a href="#" class="text-primary hover:underline font-medium flex items-center">
+                    View All
+                    <span class="w-5 h-5 flex items-center justify-center ml-1">
+                        <i class="ri-arrow-right-line"></i>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="mb-8 overflow-x-auto">
+                <div class="inline-flex bg-white rounded-full p-1 shadow-sm border">
+                    <button class="bg-primary text-white px-6 py-2 rounded-full whitespace-nowrap">All
+                        Categories</button>
+                    <button class="text-gray-700 hover:bg-gray-100 px-6 py-2 rounded-full whitespace-nowrap">Data
+                        Science</button>
+                    <button class="text-gray-700 hover:bg-gray-100 px-6 py-2 rounded-full whitespace-nowrap">Web
+                        Development</button>
+                    <button
+                        class="text-gray-700 hover:bg-gray-100 px-6 py-2 rounded-full whitespace-nowrap">Business</button>
+                    <button
+                        class="text-gray-700 hover:bg-gray-100 px-6 py-2 rounded-full whitespace-nowrap">Design</button>
+                    <button
+                        class="text-gray-700 hover:bg-gray-100 px-6 py-2 rounded-full whitespace-nowrap">Marketing</button>
+                </div>
+            </div>
+
+            <!-- Course Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all hover:shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/images/course.jpg" alt="Data Science Fundamentals"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Bestseller</span>
+                            <span class="text-gray-600 text-sm">4.9
+                                <span class="w-4 h-4 inline-flex items-center justify-center text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                </span>
+                                (2,345)
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Data Science Fundamentals</h3>
+                        <p class="text-gray-600 text-sm mb-3">Master the essential concepts and tools for data analysis
+                            and visualization.</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="flex items-center mr-3">
+                                <span class="w-4 h-4 flex items-center justify-center mr-1">
+                                    <i class="ri-time-line"></i>
+                                </span>
+                                8 weeks
+                            </span>
+                            <span class="flex items-center">
+                                <span class="w-4 h-4 flex items-center justify-center mr-1">
+                                    <i class="ri-bar-chart-line"></i>
+                                </span>
+                                Intermediate
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">$89.99</span>
+                            <button
+                                class="bg-primary text-white px-3 py-1 !rounded-button text-sm whitespace-nowrap">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all hover:shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/assets/images/course2.jpg" alt="Full-Stack Web Development"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span
+                                class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">New</span>
+                            <span class="text-gray-600 text-sm">4.8
+                                <span class="w-4 h-4 inline-flex items-center justify-center text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                </span>
+                                (1,876)
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Full-Stack Development</h3>
+                        <p class="text-gray-600 text-sm mb-3">Build responsive websites and dynamic web applications
+                            from scratch.</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="flex items-center mr-3">
+                                <span class="w-4 h-4 flex items-center justify-center mr-1">
+                                    <i class="ri-time-line"></i>
+                                </span>
+                                12 weeks
+                            </span>
+                            <span class="flex items-center">
+                                <span class="w-4 h-4 flex items-center justify-center mr-1">
+                                    <i class="ri-bar-chart-line"></i>
+                                </span>
+                                Advanced
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">$129.99</span>
+                            <button
+                                class="bg-primary text-white px-3 py-1 !rounded-button text-sm whitespace-nowrap">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all hover:shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/assets/images/course3.jpg" alt="UI/UX Design Masterclass"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span
+                                class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Popular</span>
+                            <span class="text-gray-600 text-sm">4.7
+                                <span class="w-4 h-4 inline-flex items-center justify-center text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                </span>
+                                (3,210)
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">UI/UX Design Masterclass</h3>
+                        <p class="text-gray-600 text-sm mb-3">Create stunning user interfaces and seamless experiences
+                            that users love.</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="flex items-center mr-3">
+                                <span class="w-4 h-4 flex items-center justify-center mr-1">
+                                    <i class="ri-time-line"></i>
+                                </span>
+                                10 weeks
+                            </span>
+                            <span class="flex items-center">
+                                <span class="w-4 h-4 flex items-center justify-center mr-1">
+                                    <i class="ri-bar-chart-line"></i>
+                                </span>
+                                All Levels
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">$99.99</span>
+                            <button
+                                class="bg-primary text-white px-3 py-1 !rounded-button text-sm whitespace-nowrap">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all hover:shadow-md">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/assets/images/course4.jpg" alt="Digital Marketing Strategy"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span
+                                class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Featured</span>
+                            <span class="text-gray-600 text-sm">4.6
+                                <span class="w-4 h-4 inline-flex items-center justify-center text-yellow-400">
+                                    <i class="ri-star-fill"></i>
+                                </span>
+                                (1,543)
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Digital Marketing Strategy</h3>
+                        <p class="text-gray-600 text-sm mb-3">Learn to create and implement effective digital marketing
+                            campaigns.</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="flex items-center mr-3">
+                                <span class="w-4 h-4 flex items-center justify-center mr-1">
+                                    <i class="ri-time-line"></i>
+                                </span>
+                                6 weeks
+                            </span>
+                            <span class="flex items-center">
+                                <span class="w-4 h-4 flex items-center justify-center mr-1">
+                                    <i class="ri-bar-chart-line"></i>
+                                </span>
+                                Intermediate
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-900">$79.99</span>
+                            <button
+                                class="bg-primary text-white px-3 py-1 !rounded-button text-sm whitespace-nowrap">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose SkillForge?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We're committed to providing high-quality education that
+                    helps you achieve your career goals and transform your future.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="w-6 h-6 flex items-center justify-center text-primary">
+                            <i class="ri-award-line"></i>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Industry-Leading Experts</h3>
+                    <p class="text-gray-600">Learn from professionals with real-world experience in their fields who
+                        bring practical insights to every lesson.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="w-6 h-6 flex items-center justify-center text-green-600">
+                            <i class="ri-calendar-check-line"></i>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Flexible Learning Schedule</h3>
+                    <p class="text-gray-600">Study at your own pace with 24/7 access to course materials, allowing you
+                        to balance learning with your busy life.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="w-6 h-6 flex items-center justify-center text-purple-600">
+                            <i class="ri-community-line"></i>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Supportive Community</h3>
+                    <p class="text-gray-600">Join a global network of learners and instructors who collaborate, share
+                        insights, and support each other's growth.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="w-6 h-6 flex items-center justify-center text-red-600">
+                            <i class="ri-briefcase-line"></i>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Career Services</h3>
+                    <p class="text-gray-600">Access job placement assistance, resume reviews, and interview preparation
+                        to help you land your dream job.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="w-6 h-6 flex items-center justify-center text-yellow-600">
+                            <i class="ri-medal-line"></i>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Industry-Recognized Certificates</h3>
+                    <p class="text-gray-600">Earn credentials valued by employers that validate your skills and boost
+                        your resume.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <span class="w-6 h-6 flex items-center justify-center text-indigo-600">
+                            <i class="ri-hand-heart-line"></i>
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Satisfaction Guarantee</h3>
+                    <p class="text-gray-600">We're confident in our courses. If you're not satisfied within 30 days, we
+                        offer a full refund, no questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Ready to Start Your Learning Journey?</h2>
+            <p class="text-white opacity-90 max-w-2xl mx-auto mb-8">Join over 100,000 learners who have transformed
+                their careers with our industry-leading courses.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="bg-white text-primary px-6 py-3 !rounded-button font-medium whitespace-nowrap">
+                    Get Started Today
+                </a>
+                <a href="/courses/course-template.html"
+                    class="bg-transparent text-white border border-white px-6 py-3 !rounded-button font-medium whitespace-nowrap">
+                    Browse All Courses
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="font-['Pacifico'] text-white text-2xl mb-4 inline-block">EduRelifx</a>
+                    <p class="text-gray-400 mb-4">Empowering individuals to achieve their professional goals through
+                        accessible, high-quality education.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-x-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Explore</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instructors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest courses and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your email address"
+                            class="bg-gray-800 border-none text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                        <button type="submit"
+                            class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 EduRelifx. All rights reserved.</p>
+                    <div class="flex flex-wrap justify-center space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Accessibility</a>
+                    </div>
+                </div>
+                <!-- <div class="mt-4 flex justify-center space-x-4">
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-visa-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-mastercard-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-paypal-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-apple-fill"></i>
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle functionality can be added here
+        });
+    </script>
+</body>
+
+</html>

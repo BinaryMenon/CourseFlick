@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRelifx - Empowering Dreams Through Education.</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4361ee',secondary:'#7209b7'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* .hero-bg {
+            background-image: url('/assets/images/homepage\ \(1\).jpg');
+            background-size: cover;
+            background-position: center;
+        } */
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="font-['Pacifico'] text-primary text-2xl">EduRelifx</a>
+                    <nav class="hidden md:ml-12 md:flex md:space-x-8">
+                        <a href="index.html" class="text-black- 700 hover:text-primary font-medium">Home</a>
+                        <a href="courses/course-template.html" class="text-black-700 hover:text-primary font-medium">Courses</a>
+                        <a href="resources.html" class="text-black-700 hover:text-primary font-medium">Resources</a>
+                        <a href="enterprise.html" class="text-black- 700 hover:text-primary font-medium">Enterprise</a>
+                        <a href="#" class="text-primary font-medium">About Us</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium whitespace-nowrap">Sign In</a>
+                    <a href="#" class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="">
+        <div class="w-full h-[500px] relative">
+            <div style="background-image: url('/assets/images/aboutus.jpg');" class="absolute inset-0 bg-cover bg-center bg-no-repeat object-top"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+            <div class="container mx-auto px-6 h-full flex items-center relative z-10">
+                <div class="max-w-2xl text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Story of Innovation and Growth</h1>
+                    <p class="text-xl mb-8">We're a team of passionate individuals dedicated to creating exceptional experiences and driving meaningful change in our industry.</p>
+                    <button class="bg-white text-primary px-8 py-3 !rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">Discover Our Journey</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">From a small startup to an industry leader, our path has been defined by innovation, perseverance, and a commitment to excellence.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
+                <div>
+                    <span class="text-primary font-semibold">2015</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">The Beginning</h3>
+                    <p class="text-gray-600 mb-4">Founded by James Wilson and Emily Chen in a small garage office, our company started with a vision to revolutionize how businesses approach digital transformation. With just 5 team members and unwavering determination, we secured our first major client within three months.</p>
+                    <p class="text-gray-600">This early success validated our approach and set the foundation for our future growth. Despite limited resources, we delivered exceptional results that exceeded client expectations.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="/assets/images/about.jpg" alt="Company founding" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
+                <div class="order-2 md:order-1 rounded-lg overflow-hidden shadow-lg">
+                    <img src="/assets/images/about1.jpg" alt="Company expansion" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-primary font-semibold">2018</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">Expansion & Growth</h3>
+                    <p class="text-gray-600 mb-4">By 2018, our team had grown to 25 talented professionals, and we moved into our first official headquarters. This period marked significant client acquisition across multiple industries, establishing our reputation for innovative solutions.</p>
+                    <p class="text-gray-600">We launched our flagship product platform, which quickly gained traction in the market and became the cornerstone of our service offerings. This innovation helped us secure several industry awards for excellence.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-primary font-semibold">2025</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4">Today & Beyond</h3>
+                    <p class="text-gray-600 mb-4">Today, we stand as an industry leader with over 150 employees across three global offices. Our client portfolio includes Fortune 500 companies and innovative startups alike, all benefiting from our comprehensive suite of solutions.</p>
+                    <p class="text-gray-600">As we look to the future, we remain committed to our founding principles while embracing new technologies and methodologies. Our vision is to continue expanding our global footprint while maintaining the personalized approach that has defined our success.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="/assets/images/about2.jpg" alt="Company today" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Values -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">These principles guide every decision we make and shape our company culture.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-lightbulb-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Innovation</h3>
+                    <p class="text-gray-600">We continuously seek new ideas and approaches to solve complex challenges, embracing creativity in everything we do.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-team-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Collaboration</h3>
+                    <p class="text-gray-600">We believe in the power of teamwork, combining diverse perspectives to achieve exceptional results together.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-heart-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Integrity</h3>
+                    <p class="text-gray-600">We uphold the highest ethical standards, building trust through transparency and honesty in all our relationships.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-rocket-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Excellence</h3>
+                    <p class="text-gray-600">We strive for exceptional quality in everything we do, constantly raising the bar for ourselves and our industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Meet Our Leadership Team</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">The passionate individuals driving our vision and success.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/assets/images/team1.jpg" alt="James Wilson" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="text-xl font-bold mb-1">James Wilson</h3>
+                        <p class="text-primary font-medium mb-3">Chief Executive Officer</p>
+                        <p class="text-gray-600 text-sm mb-4">Co-founder with 15+ years of industry experience. James leads our strategic vision and has been instrumental in our global expansion.</p>
+                        <div class="social-links flex space-x-3">
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-linkedin-fill text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-twitter-fill text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-mail-line text-gray-600"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/assets/images/team2.jpg" alt="Emily Chen" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="text-xl font-bold mb-1">Emily Chen</h3>
+                        <p class="text-primary font-medium mb-3">Chief Operations Officer</p>
+                        <p class="text-gray-600 text-sm mb-4">Co-founder with expertise in operational excellence. Emily oversees our day-to-day operations and client success initiatives.</p>
+                        <div class="social-links flex space-x-3">
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-linkedin-fill text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-twitter-fill text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-mail-line text-gray-600"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="/assets/images/team3.jpg" alt="Michael Rodriguez" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="text-xl font-bold mb-1">Michael Rodriguez</h3>
+                        <p class="text-primary font-medium mb-3">Chief Technology Officer</p>
+                        <p class="text-gray-600 text-sm mb-4">Tech visionary with a background in AI and machine learning. Michael drives our product innovation and technical strategy.</p>
+                        <div class="social-links flex space-x-3">
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-linkedin-fill text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-twitter-fill text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-mail-line text-gray-600"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20female%20CMO%20in%20her%20early%2040s%20with%20curly%20hair%20styled%20professionally%2C%20wearing%20a%20stylish%20blazer%20in%20forest%20green%20over%20a%20white%20top%2C%20against%20a%20neutral%20background.%20She%20has%20a%20confident%2C%20creative%20smile%20that%20conveys%20marketing%20expertise%20and%20strategic%20thinking.%20The%20lighting%20is%20soft%20and%20professional%2C%20highlighting%20her%20features%20clearly.&width=400&height=500&seq=8&orientation=portrait" alt="Sarah Johnson" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6 relative">
+                        <h3 class="text-xl font-bold mb-1">Sarah Johnson</h3>
+                        <p class="text-primary font-medium mb-3">Chief Marketing Officer</p>
+                        <p class="text-gray-600 text-sm mb-4">Marketing strategist who joined in 2017. Sarah has transformed our brand presence and leads our global marketing initiatives.</p>
+                        <div class="social-links flex space-x-3">
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-linkedin-fill text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-twitter-fill text-gray-600"></i>
+                            </a>
+                            <a href="#" class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                <i class="ri-mail-line text-gray-600"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-white border border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary/5 transition-colors whitespace-nowrap">View Full Team</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-primary">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-white text-center">
+                <div>
+                    <div class="text-5xl font-bold mb-2 stat-counter" data-target="150">0</div>
+                    <div class="text-xl font-medium">Team Members</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2 stat-counter" data-target="500">0</div>
+                    <div class="text-xl font-medium">Clients Worldwide</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2 stat-counter" data-target="12">0</div>
+                    <div class="text-xl font-medium">Industry Awards</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold mb-2 stat-counter" data-target="3">0</div>
+                    <div class="text-xl font-medium">Global Offices</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Culture -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Life at Our Company</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">We foster a culture of creativity, collaboration, and continuous growth.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md col-span-2 md:col-span-1 row-span-2">
+                    <img src="https://readdy.ai/api/search-image?query=A%20modern%20office%20collaborative%20space%20with%20teams%20engaged%20in%20a%20creative%20brainstorming%20session.%20Multiple%20professionals%20of%20diverse%20backgrounds%20gather%20around%20a%20large%20table%20with%20digital%20displays%20and%20whiteboards%20filled%20with%20ideas.%20The%20space%20features%20contemporary%20design%20elements%20with%20plants%20and%20natural%20light.%20The%20atmosphere%20is%20energetic%20and%20focused%20on%20innovation.&width=600&height=800&seq=9&orientation=portrait" alt="Team collaboration" class="w-full h-full object-cover object-top">
+                    <div class="p-3 bg-white">
+                        <p class="text-gray-700 font-medium">Collaborative brainstorming sessions drive our innovation</p>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="https://readdy.ai/api/search-image?query=A%20professional%20development%20workshop%20in%20a%20modern%20conference%20room.%20Employees%20are%20engaged%20in%20learning%2C%20with%20a%20presenter%20at%20the%20front%20using%20digital%20displays.%20The%20room%20has%20a%20professional%20yet%20comfortable%20atmosphere%20with%20good%20lighting%20and%20modern%20furnishings.%20Participants%20are%20taking%20notes%20and%20actively%20participating.&width=400&height=300&seq=10&orientation=landscape" alt="Professional development" class="w-full h-full object-cover object-top">
+                    <div class="p-3 bg-white">
+                        <p class="text-gray-700 font-medium">Regular professional development workshops</p>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="https://readdy.ai/api/search-image?query=A%20company%20celebration%20event%20with%20team%20members%20enjoying%20themselves%20in%20a%20casual%20setting.%20The%20space%20is%20decorated%20with%20company%20colors%2C%20and%20people%20are%20socializing%2C%20laughing%2C%20and%20celebrating%20achievements.%20The%20atmosphere%20is%20warm%20and%20festive%2C%20showing%20strong%20company%20culture%20and%20camaraderie.&width=400&height=300&seq=11&orientation=landscape" alt="Team celebration" class="w-full h-full object-cover object-top">
+                    <div class="p-3 bg-white">
+                        <p class="text-gray-700 font-medium">Celebrating our achievements together</p>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md col-span-2">
+                    <img src="https://readdy.ai/api/search-image?query=A%20modern%20office%20wellness%20area%20with%20employees%20participating%20in%20a%20yoga%20or%20fitness%20session.%20The%20space%20is%20bright%20and%20airy%20with%20minimalist%20design.%20Some%20people%20are%20on%20yoga%20mats%20while%20others%20use%20fitness%20equipment.%20Plants%20and%20natural%20elements%20create%20a%20calming%20environment%20that%20promotes%20well-being%20and%20work-life%20balance.&width=800&height=400&seq=12&orientation=landscape" alt="Wellness activities" class="w-full h-full object-cover object-top">
+                    <div class="p-3 bg-white">
+                        <p class="text-gray-700 font-medium">Promoting wellness and work-life balance through regular activities</p>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <img src="https://readdy.ai/api/search-image?query=A%20corporate%20social%20responsibility%20event%20with%20employees%20volunteering%20in%20the%20community.%20Team%20members%20wearing%20company%20t-shirts%20are%20engaged%20in%20environmental%20cleanup%2C%20tree%20planting%2C%20or%20community%20service.%20The%20setting%20shows%20people%20working%20together%20outdoors%20with%20a%20sense%20of%20purpose%20and%20giving%20back.&width=400&height=300&seq=13&orientation=landscape" alt="Community involvement" class="w-full h-full object-cover object-top">
+                    <div class="p-3 bg-white">
+                        <p class="text-gray-700 font-medium">Giving back to our community</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="font-['Pacifico'] text-white text-2xl mb-4 inline-block">EduRelifx</a>
+                    <p class="text-gray-400 mb-4">Empowering individuals to achieve their professional goals through accessible, high-quality education.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-x-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Explore</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instructors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest courses and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your email address" class="bg-gray-800 border-none text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                        <button type="submit" class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 EduRelifx. All rights reserved.</p>
+                    <div class="flex flex-wrap justify-center space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Accessibility</a>
+                    </div>
+                </div>
+                <!-- <div class="mt-4 flex justify-center space-x-4">
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-visa-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-mastercard-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-paypal-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-apple-fill"></i>
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle functionality can be added here
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRelifx - Empowering Dreams Through Education.</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4361ee',secondary:'#7209b7'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('/assets/images/homepage\ \(1\).jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="font-['Pacifico'] text-primary text-2xl">EduRelifx</a>
+                    <nav class="hidden md:ml-12 md:flex md:space-x-8">
+                        <a href="index.html" class="text-black-700 hover:text-primary font-medium">Home</a>
+                        <a href="courses/course-template.html" class="text-black-700 hover:text-primary font-medium">Courses</a>
+                        <a href="#" class="text-primary font-medium">Resources</a>
+                        <a href="enterprise.html" class="text-black- 700 hover:text-primary font-medium">Enterprise</a>
+                        <a href="#" class="text-black-700 hover:text-primary font-medium">About Us</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium whitespace-nowrap">Sign In</a>
+                    <a href="#" class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .resource-card {
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #4f46e5;
+            border-color: #4f46e5;
+        }
+
+        input[type="checkbox"]:checked::after {
+            content: "";
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 0.25rem;
+            height: 0.5rem;
+            border-bottom: 2px solid white;
+            border-right: 2px solid white;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 3rem;
+            height: 1.5rem;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            transition: .4s;
+            border-radius: 999px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 1.1rem;
+            width: 1.1rem;
+            left: 0.2rem;
+            bottom: 0.2rem;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.toggle-slider {
+            background-color: #4f46e5;
+        }
+
+        input:checked+.toggle-slider:before {
+            transform: translateX(1.5rem);
+        }
+
+        .category-tag {
+            transition: all 0.2s ease;
+        }
+
+        .category-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .search-input:focus {
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+
+        .copy-button {
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .resource-card:hover .copy-button {
+            opacity: 1;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.5em 1.5em;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 min-h-screen text-gray-100">
+    <header class="bg-gray-800 border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-bold text-white">Web Resources</h1>
+                    <div class="flex items-center text-sm text-gray-400 mt-1">
+                        <a href="#" class="hover:text-primary">Home</a>
+                        <span class="mx-2">/</span>
+                        <span class="text-gray-300">Resources</span>
+                    </div>
+                </div>
+                <div class="relative w-64">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <div class="w-5 h-5 flex items-center justify-center text-gray-400">
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                    <input type="text"
+                        class="search-input block w-full pl-10 pr-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-sm text-gray-100 placeholder-gray-400 focus:outline-none focus:border-primary transition duration-150 ease-in-out"
+                        placeholder="Search resources...">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                <div class="flex flex-wrap gap-2">
+                    <button
+                        class="category-tag bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200 hover:border-primary hover:text-primary transition-all !rounded-button whitespace-nowrap">
+                        All Resources
+                    </button>
+                    <button
+                        class="category-tag bg-blue-50 px-4 py-2 rounded-full text-sm font-medium text-blue-700 border border-blue-100 hover:bg-blue-100 transition-all !rounded-button whitespace-nowrap">
+                        <div class="w-4 h-4 inline-flex items-center justify-center mr-1">
+                            <i class="ri-code-s-slash-line"></i>
+                        </div>
+                        Development
+                    </button>
+                    <button
+                        class="category-tag bg-purple-50 px-4 py-2 rounded-full text-sm font-medium text-purple-700 border border-purple-100 hover:bg-purple-100 transition-all !rounded-button whitespace-nowrap">
+                        <div class="w-4 h-4 inline-flex items-center justify-center mr-1">
+                            <i class="ri-palette-line"></i>
+                        </div>
+                        Design
+                    </button>
+                    <button
+                        class="category-tag bg-green-50 px-4 py-2 rounded-full text-sm font-medium text-green-700 border border-green-100 hover:bg-green-100 transition-all !rounded-button whitespace-nowrap">
+                        <div class="w-4 h-4 inline-flex items-center justify-center mr-1">
+                            <i class="ri-book-open-line"></i>
+                        </div>
+                        Documentation
+                    </button>
+                    <button
+                        class="category-tag bg-amber-50 px-4 py-2 rounded-full text-sm font-medium text-amber-700 border border-amber-100 hover:bg-amber-100 transition-all !rounded-button whitespace-nowrap">
+                        <div class="w-4 h-4 inline-flex items-center justify-center mr-1">
+                            <i class="ri-graduation-cap-line"></i>
+                        </div>
+                        Learning
+                    </button>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded bg-white border border-gray-200 text-gray-500 hover:text-primary hover:border-primary transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-layout-grid-line"></i>
+                        </button>
+                        <button
+                            class="w-8 h-8 flex items-center justify-center rounded bg-white border border-gray-200 text-gray-500 hover:text-primary hover:border-primary transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-list-check"></i>
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <select
+                            class="bg-gray-700 border border-gray-600 text-gray-100 py-2 pl-3 pr-10 rounded-md text-sm focus:outline-none focus:ring-primary focus:border-primary !rounded-button whitespace-nowrap">
+                            <option>Recently Added</option>
+                            <option>Alphabetical</option>
+                            <option>Most Used</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Development Resources -->
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-lg">
+                            <i class="ri-github-fill ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">GitHub</h3>
+                    <p class="text-sm text-gray-400 mb-3">Web-based platform for version control and collaboration for
+                        software projects.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
+                            Development
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-lg">
+                            <i class="ri-code-s-slash-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">VS Code</h3>
+                    <p class="text-sm text-gray-400 mb-3">Lightweight but powerful source code editor with built-in
+                        support for JavaScript, TypeScript and Node.js.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
+                            Development
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-lg">
+                            <i class="ri-terminal-box-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">Stack Overflow</h3>
+                    <p class="text-sm text-gray-400 mb-3">Public platform for developers to learn, share their
+                        knowledge, and build their careers.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
+                            Development
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Design Resources -->
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center bg-purple-100 text-purple-600 rounded-lg">
+                            <i class="ri-paint-brush-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-fill"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">Figma</h3>
+                    <p class="text-sm text-gray-400 mb-3">Cloud-based design tool for collaborative interface design,
+                        prototyping, and systems.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700">
+                            Design
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center bg-purple-100 text-purple-600 rounded-lg">
+                            <i class="ri-image-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">Unsplash</h3>
+                    <p class="text-sm text-gray-400 mb-3">Beautiful, free images and photos that you can download and
+                        use for any project.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700">
+                            Design
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center bg-purple-100 text-purple-600 rounded-lg">
+                            <i class="ri-palette-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">Coolors</h3>
+                    <p class="text-sm text-gray-400 mb-3">The super fast color schemes generator for cool designers and
+                        developers.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-50 text-purple-700">
+                            Design
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Documentation Resources -->
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-lg">
+                            <i class="ri-file-text-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">MDN Web Docs</h3>
+                    <p class="text-sm text-gray-400 mb-3">Resources for developers, by developers. Documentation for
+                        HTML, CSS, JavaScript and Web APIs.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-50 text-green-700">
+                            Documentation
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-lg">
+                            <i class="ri-book-open-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">DevDocs</h3>
+                    <p class="text-sm text-gray-400 mb-3">Fast, offline, and free documentation browser for developers.
+                        Search 100+ docs in one web app.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-50 text-green-700">
+                            Documentation
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Learning Resources -->
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center bg-amber-100 text-amber-600 rounded-lg">
+                            <i class="ri-graduation-cap-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">freeCodeCamp</h3>
+                    <p class="text-sm text-gray-400 mb-3">Learn to code for free with interactive tutorials, projects,
+                        and certifications.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
+                            Learning
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center bg-amber-100 text-amber-600 rounded-lg">
+                            <i class="ri-video-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">Traversy Media</h3>
+                    <p class="text-sm text-gray-400 mb-3">Web development and programming tutorials for all levels with
+                        a focus on practical projects.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
+                            Learning
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center bg-amber-100 text-amber-600 rounded-lg">
+                            <i class="ri-lightbulb-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">CSS-Tricks</h3>
+                    <p class="text-sm text-gray-400 mb-3">Daily articles about CSS, HTML, JavaScript, and all things
+                        related to web design and development.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700">
+                            Learning
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-card bg-gray-800 rounded-lg shadow-md border border-gray-700 overflow-hidden">
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-lg">
+                            <i class="ri-reactjs-line ri-lg"></i>
+                        </div>
+                        <button
+                            class="copy-button w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-gray-600 transition-all !rounded-button whitespace-nowrap">
+                            <i class="ri-bookmark-line"></i>
+                        </button>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-100 mb-1">React Documentation</h3>
+                    <p class="text-sm text-gray-400 mb-3">Official documentation for React, a JavaScript library for
+                        building user interfaces.</p>
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
+                            Development
+                        </span>
+                        <button
+                            class="text-primary text-sm font-medium hover:text-primary/80 flex items-center !rounded-button whitespace-nowrap">
+                            Visit
+                            <div class="w-4 h-4 inline-flex items-center justify-center ml-1">
+                                <i class="ri-external-link-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <a href="#" class="font-['Pacifico'] text-white text-2xl mb-4 inline-block">EduRelifx</a>
+                    <p class="text-gray-400 mb-4">Empowering individuals to achieve their professional goals through accessible, high-quality education.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-x-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-linkedin-fill"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+                            <span class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-fill"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Explore</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Instructors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Information</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest courses and offers.</p>
+                    <form class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your email address" class="bg-gray-800 border-none text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                        <button type="submit" class="bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 EduRelifx. All rights reserved.</p>
+                    <div class="flex flex-wrap justify-center space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Accessibility</a>
+                    </div>
+                </div>
+                <!-- <div class="mt-4 flex justify-center space-x-4">
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-visa-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-mastercard-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-paypal-fill"></i>
+                    </span>
+                    <span class="w-8 h-5 flex items-center justify-center text-gray-400">
+                        <i class="ri-apple-fill"></i>
+                    </span>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Copy button functionality
+            const copyButtons = document.querySelectorAll('.copy-button');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('ri-bookmark-line')) {
+                        icon.classList.remove('ri-bookmark-line');
+                        icon.classList.add('ri-bookmark-fill');
+                        this.classList.add('bg-gray-200');
+                    } else {
+                        icon.classList.remove('ri-bookmark-fill');
+                        icon.classList.add('ri-bookmark-line');
+                        this.classList.remove('bg-gray-200');
+                    }
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Search functionality
+            const searchInput = document.querySelector('.search-input');
+            const resourceCards = document.querySelectorAll('.resource-card');
+            searchInput.addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase();
+                resourceCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    const category = card.querySelector('span').textContent.toLowerCase();
+                    if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Category filtering
+            const categoryButtons = document.querySelectorAll('.category-tag');
+            const resourceCards = document.querySelectorAll('.resource-card');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const category = this.textContent.trim().toLowerCase();
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('ring-2', 'ring-primary');
+                    });
+                    this.classList.add('ring-2', 'ring-primary');
+                    resourceCards.forEach(card => {
+                        const cardCategory = card.querySelector('span').textContent.trim().toLowerCase();
+                        if (category === 'all resources' || cardCategory === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle functionality can be added here
+        });
+    </script>
+</body>
+</html>
